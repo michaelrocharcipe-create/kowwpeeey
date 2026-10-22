@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- 
+      ========================================================================
+      PROJECT INFORMATION & AUTHOR CREDITS
+      ========================================================================
+      Subject:     IT105 - Web Development
+    Project:     Pick Up Coffee Express & Seat Reserve (Ecoland Branch)
+      Authors:     Michael Roch T. Arcipe & Jade Ganzan
+      Location:    Ecoland, Matina, Davao City (Near St. John Paul II Parish)
+      Year:        2026
+      ========================================================================
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Michael Roch T. Arcipe,Jade Ganzan">
+    <title>Pick Up Coffee | Ecoland Express & Study Reserve</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#c17b43',
+                            600: '#a65f32',
+                            800: '#704126',
+                            900: '#4d2b1b',
+                            950: '#2d1a12',
+                        },
+                        accent: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-100 text-stone-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Sticky Navigation Bar -->
+    <nav id="siteNav" class="hidden bg-brand-950/95 backdrop-blur-md text-stone-100 shadow-lg sticky top-0 z-50 border-b border-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-brand-500 text-brand-950 rounded-xl flex items-center justify-center font-black text-xl shadow-md">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-lg tracking-wide text-white block leading-none">Pick Up Coffee</span>
+                        <span class="text-accent-400 text-xs font-semibold tracking-wider uppercase">Ecoland Branch • Near St. John Paul II</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-semibold">
+                    <a href="#hero" class="hover:text-accent-400 transition">Home</a>
+                    <a href="#about" class="hover:text-accent-400 transition">About Solution</a>
+                    <a href="#dashboard" class="hover:text-accent-400 transition">Order & Seats</a>
+                    <a href="#contact" class="hover:text-accent-400 transition">Contact</a>
+                    <a href="#access" id="accessNavLink" class="hover:text-accent-400 transition">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-brand-950 text-white border border-brand-900">
+            <div class="absolute inset-0 opacity-35">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80" alt="Pick Up Coffee Ecoland cafe" class="w-full h-full object-cover">
+            </div>
+            <div class="relative max-w-2xl px-6 py-16 sm:py-24 sm:px-12 space-y-6">
+                <span class="inline-flex items-center gap-2 bg-brand-500/20 text-brand-100 border border-brand-500/40 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                    <i class="fa-solid fa-location-dot text-accent-400"></i> Ecoland Community Solution
+                </span>
+                <h1 class="text-4xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+                    Coffee, ready when you are at <span class="text-brand-500">Pick Up Coffee</span>
+                </h1>
+                <p class="text-stone-300 text-base sm:text-lg leading-relaxed">
+                    Skip long ordering lines and check live study table seating before walking over from St. John Paul II Parish or McArthur Highway.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#dashboard" class="bg-brand-500 hover:bg-brand-600 text-brand-950 font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-brand-500/20 transition flex items-center gap-2">
+                        <i class="fa-solid fa-mug-hot"></i> Pre-Order & Check Seats
+                    </a>
+                    <a href="#about" class="bg-stone-900/80 hover:bg-stone-800 text-stone-200 font-semibold px-6 py-3.5 rounded-xl border border-stone-700 transition">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT & COMMUNITY PROBLEM SECTION -->
+    <section id="about" class="hidden bg-white py-16 border-y border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="max-w-3xl space-y-3">
+                <span class="text-brand-600 font-extrabold text-xs uppercase tracking-wider">The Community Challenge</span>
+                <h2 class="text-3xl font-black text-stone-900">Solving the Rush Hour Overcrowding in Ecoland</h2>
+                <p class="text-stone-600 leading-relaxed">
+                    Pick Up Coffee Ecoland is a favorite stop for students, remote workers, and parishioners visiting St. John Paul II Parish. During peak hours (3 PM – 9 PM), customers often wait in line and struggle to find available study tables with power outlets.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 pt-2">
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 hover:border-brand-500 transition space-y-3">
+                    <div class="w-10 h-10 bg-brand-100 text-brand-800 rounded-xl flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-chair"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-stone-900">Live Seat Status</h3>
+                    <p class="text-stone-600 text-sm">Know if power outlet study tables are occupied before leaving home or church.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 hover:border-brand-500 transition space-y-3">
+                    <div class="w-10 h-10 bg-brand-100 text-brand-800 rounded-xl flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-stone-900">Express Pickup Counter</h3>
+                    <p class="text-stone-600 text-sm">Place pre-orders ahead of time and grab your coffee directly at the express counter.</p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200 hover:border-brand-500 transition space-y-3">
+                    <div class="w-10 h-10 bg-brand-100 text-brand-800 rounded-xl flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-stone-900">Student & Parish Friendly</h3>
+                    <p class="text-stone-600 text-sm">Designed specifically for local Matina/Ecoland student groups and community members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Role-separated access -->
+    <section id="access" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="max-w-2xl mx-auto bg-white border border-stone-200 rounded-2xl shadow-sm overflow-hidden">
+            <div class="p-6 sm:p-8 border-b border-stone-200">
+                <p class="text-brand-600 font-extrabold text-xs uppercase tracking-wider">Pick Up Coffee | Ecoland</p>
+                <h2 class="text-2xl font-black text-stone-900 mt-1">Account access</h2>
+                <p class="text-stone-500 text-sm mt-2">Sign in to continue. Customer accounts and administrator access are separate.</p>
+            </div>
+            <div id="authPanel" class="p-6 sm:p-8 space-y-5">
+                <div class="grid grid-cols-3 gap-2" role="tablist" aria-label="Account access type">
+                    <button type="button" data-auth-view="customer-login" class="auth-tab bg-brand-950 text-white px-2 py-2.5 rounded-lg text-xs sm:text-sm font-bold">Customer Login</button>
+                    <button type="button" data-auth-view="register" class="auth-tab bg-stone-100 text-stone-700 px-2 py-2.5 rounded-lg text-xs sm:text-sm font-bold">Create Account</button>
+                    <button type="button" data-auth-view="admin-login" class="auth-tab bg-stone-100 text-stone-700 px-2 py-2.5 rounded-lg text-xs sm:text-sm font-bold">Admin Login</button>
+                </div>
+
+                <form id="customerLoginForm" class="auth-form space-y-4">
+                    <div>
+                        <label for="customerLoginEmail" class="block text-xs font-bold text-stone-700 mb-1">Email address</label>
+                        <input id="customerLoginEmail" type="email" autocomplete="email" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="customerLoginPassword" class="block text-xs font-bold text-stone-700 mb-1">Password</label>
+                        <input id="customerLoginPassword" type="password" autocomplete="current-password" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-3 rounded-xl text-sm transition">Sign in as customer</button>
+                </form>
+
+                <form id="customerRegisterForm" class="auth-form hidden grid sm:grid-cols-2 gap-4">
+                    <div class="sm:col-span-2">
+                        <label for="registerName" class="block text-xs font-bold text-stone-700 mb-1">Full name</label>
+                        <input id="registerName" type="text" autocomplete="name" minlength="2" maxlength="100" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="registerEmail" class="block text-xs font-bold text-stone-700 mb-1">Email address</label>
+                        <input id="registerEmail" type="email" autocomplete="email" maxlength="254" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="registerPhone" class="block text-xs font-bold text-stone-700 mb-1">Mobile number</label>
+                        <input id="registerPhone" type="tel" autocomplete="tel" maxlength="30" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="registerPassword" class="block text-xs font-bold text-stone-700 mb-1">Password (8+ characters)</label>
+                        <input id="registerPassword" type="password" autocomplete="new-password" minlength="8" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="registerPasswordConfirm" class="block text-xs font-bold text-stone-700 mb-1">Confirm password</label>
+                        <input id="registerPasswordConfirm" type="password" autocomplete="new-password" minlength="8" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <button type="submit" class="sm:col-span-2 w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-3 rounded-xl text-sm transition">Create customer account</button>
+                </form>
+
+                <form id="adminLoginForm" class="auth-form hidden space-y-4">
+                    <div>
+                        <label for="adminLoginEmail" class="block text-xs font-bold text-stone-700 mb-1">Administrator email</label>
+                        <input id="adminLoginEmail" type="email" autocomplete="username" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <div>
+                        <label for="adminLoginPassword" class="block text-xs font-bold text-stone-700 mb-1">Administrator password</label>
+                        <input id="adminLoginPassword" type="password" autocomplete="current-password" required class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-3 rounded-xl text-sm transition">Sign in as administrator</button>
+                    <p class="text-xs text-stone-500">Demo only: admin@greencoffee.local / Admin123!</p>
+                </form>
+
+                <p id="authMessage" class="hidden text-sm p-3 rounded-lg" role="status" aria-live="polite"></p>
+                <p class="text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3">Demo access only: accounts and access checks are stored in this browser. Do not use real passwords or personal information. Production authentication requires a secure server.</p>
+            </div>
+            <div id="signedInPanel" class="hidden p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                    <div>
+                        <p id="signedInRole" class="text-brand-600 font-extrabold text-xs uppercase tracking-wider"></p>
+                        <h3 id="signedInName" class="font-black text-xl text-stone-900 mt-1"></h3>
+                        <p id="signedInEmail" class="text-stone-500 text-sm"></p>
+                    </div>
+                    <button id="signOutButton" type="button" class="border border-stone-300 hover:bg-stone-100 text-stone-800 font-bold px-4 py-2.5 rounded-lg text-sm">Sign out</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MAIN FEATURE: PRE-ORDER DASHBOARD & SEAT TRACKER -->
+    <section id="dashboard" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+        
+        <!-- Live Table Availability Indicator Banner -->
+        <div class="bg-stone-900 text-white p-6 rounded-2xl shadow-md border border-stone-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <div class="w-4 h-4 bg-emerald-500 rounded-full animate-ping absolute"></div>
+                    <div class="w-4 h-4 bg-emerald-500 rounded-full relative"></div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-base">Ecoland Branch Live Status</h3>
+                    <p class="text-stone-400 text-xs">Estimated Wait Time: <span class="text-brand-500 font-bold">8 mins</span></p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-3 text-xs">
+                <span class="bg-stone-800 border border-stone-700 px-3 py-1.5 rounded-lg">Study Tables: <strong id="openTablesStatus" class="text-emerald-400">4 Open</strong></span>
+                <span class="bg-stone-800 border border-stone-700 px-3 py-1.5 rounded-lg">Power Sockets: <strong id="openSocketsStatus" class="text-amber-400">2 Available</strong></span>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+            <div>
+                <h2 class="text-2xl font-black text-stone-900">Pre-Order Dashboard</h2>
+                <p class="text-stone-500 text-sm">Search menu items, select pickup times, and place express orders.</p>
+            </div>
+            <!-- JS Feature 1: Menu Search Filter -->
+            <div class="w-full md:w-72 relative">
+                <input type="text" id="menuSearch" onkeyup="filterMenu()" placeholder="Search iced coffee, snacks..." class="w-full pl-10 pr-4 py-2.5 border border-stone-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:outline-none text-sm bg-stone-50">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-stone-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Menu Cards Grid -->
+            <div class="lg:col-span-2 grid sm:grid-cols-2 gap-6" id="menuGrid">
+                
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-md transition flex flex-col justify-between" data-name="pick up coffee matcha espresso blend">
+                    <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=500&q=80" class="h-44 w-full object-cover" alt="Matcha Espresso">
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-stone-900 text-base">Matcha Espresso Fusion</h3>
+                                <span class="text-brand-600 font-extrabold">₱140</span>
+                            </div>
+                            <p class="text-stone-500 text-xs mt-1">Layered Japanese matcha and fresh espresso shot.</p>
+                        </div>
+                        <button onclick="addToOrder('Matcha Espresso Fusion', 140)" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-2.5 rounded-xl transition text-sm">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-md transition flex flex-col justify-between" data-name="ecoland cold brew arabica">
+                    <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80" class="h-44 w-full object-cover" alt="Cold Brew">
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-stone-900 text-base">Ecoland Signature Cold Brew</h3>
+                                <span class="text-brand-600 font-extrabold">₱125</span>
+                            </div>
+                            <p class="text-stone-500 text-xs mt-1">16-hour slow steep local Mindanao Arabica blend.</p>
+                        </div>
+                        <button onclick="addToOrder('Ecoland Cold Brew', 125)" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-2.5 rounded-xl transition text-sm">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-md transition flex flex-col justify-between" data-name="salted caramel iced latte">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=500&q=80" class="h-44 w-full object-cover" alt="Caramel Latte">
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-stone-900 text-base">Salted Caramel Iced Latte</h3>
+                                <span class="text-brand-600 font-extrabold">₱135</span>
+                            </div>
+                            <p class="text-stone-500 text-xs mt-1">Rich espresso with creamy milk and salted caramel drizzle.</p>
+                        </div>
+                        <button onclick="addToOrder('Salted Caramel Latte', 135)" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-2.5 rounded-xl transition text-sm">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-md transition flex flex-col justify-between" data-name="butter croissant study snack">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80" class="h-44 w-full object-cover" alt="Butter Croissant">
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-stone-900 text-base">Fresh Butter Croissant</h3>
+                                <span class="text-brand-600 font-extrabold">₱85</span>
+                            </div>
+                            <p class="text-stone-500 text-xs mt-1">Flaky baked pastry—the perfect companion for study hours.</p>
+                        </div>
+                        <button onclick="addToOrder('Butter Croissant', 85)" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-bold py-2.5 rounded-xl transition text-sm">Add to Order</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- JS Feature 2: Interactive Order Summary & Live Ticket Tracker -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200 space-y-6 flex flex-col justify-between">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-stone-200 pb-3">
+                        <h3 class="font-extrabold text-stone-900 text-lg">Express Order Cart</h3>
+                        <span id="itemCountBadge" class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full">0 items</span>
+                    </div>
+                    <ul id="orderList" class="space-y-2 text-sm max-h-48 overflow-y-auto divide-y divide-stone-100">
+                        <li class="text-stone-400 italic text-center py-6">Your cart is empty</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4 pt-3 border-t border-stone-200">
+                    <div class="flex justify-between font-black text-lg text-stone-900">
+                        <span>Total Amount:</span>
+                        <span id="orderTotal" class="text-brand-600">₱0</span>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-stone-700 mb-1">Select Pickup Time Slot:</label>
+                        <select id="pickupTime" class="w-full p-2.5 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none bg-stone-50">
+                            <option>Immediately (10 mins)</option>
+                            <option>After Mass (11:30 AM)</option>
+                            <option>Afternoon Study Break (3:30 PM)</option>
+                            <option>Evening Rush (6:00 PM)</option>
+                        </select>
+                    </div>
+                    <button onclick="submitPreOrder()" class="w-full bg-brand-500 hover:bg-brand-600 text-brand-950 font-black py-3 rounded-xl shadow-md transition text-sm">
+                        Confirm Express Pre-Order
+                    </button>
+                    
+                    <div id="queueStatus" class="hidden bg-emerald-50 border border-emerald-300 text-emerald-900 p-4 rounded-xl text-xs space-y-1">
+                        <p class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Express Order Submitted!</p>
+                        <p id="queueTicket" class="text-stone-700 leading-tight"></p>
+                        <div id="customerOrderView" class="hidden border-t border-emerald-200 pt-3 mt-3 space-y-2">
+                            <p class="font-bold">What you ordered</p>
+                            <ul id="confirmedOrderList" class="space-y-1 text-stone-700"></ul>
+                            <p class="font-bold">Total: <span id="confirmedOrderTotal"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTACT & FEEDBACK FORM -->
+    <section id="contact" class="hidden bg-white py-16 border-t border-stone-200">
+        <div class="max-w-xl mx-auto px-4 space-y-6">
+            <div class="text-center space-y-2">
+                <h2 class="text-2xl font-black text-stone-900">Contact & Community Feedback</h2>
+                <p class="text-stone-500 text-sm">Submit suggestions to improve Pick Up Coffee Ecoland service.</p>
+            </div>
+            
+            <form id="feedbackForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">Your Full Name</label>
+                    <input type="text" id="contactName" required placeholder="e.g. Michael Roch Arcipe" class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">Email Address</label>
+                    <input type="email" id="contactEmail" required placeholder="e.g. student@example.com" class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-stone-700 mb-1">Feedback Message</label>
+                    <textarea id="contactMsg" rows="3" required placeholder="How can we make study and pickup experience better at Ecoland branch?" class="w-full p-3 border border-stone-300 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-brand-950 hover:bg-brand-600 text-white font-extrabold py-3 rounded-xl text-sm transition shadow-md">
+                    Send Community Feedback
+                </button>
+            </form>
+
+            <div id="formSuccessAlert" class="hidden bg-emerald-50 border border-emerald-300 text-emerald-900 p-4 rounded-xl text-sm flex items-center space-x-3">
+                <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+                <div>
+                    <p class="font-bold">Feedback Recorded!</p>
+                    <p class="text-xs text-stone-600">Thank you for helping us improve Pick Up Coffee Ecoland.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="adminPanel" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-6">
+        <div>
+            <p class="text-brand-600 font-extrabold text-xs uppercase tracking-wider">Administrator</p>
+            <h2 class="text-2xl font-black text-stone-900">Administrator workspace</h2>
+        </div>
+        <div class="flex flex-wrap gap-2 border-b border-stone-200 pb-3" role="tablist" aria-label="Administrator modes">
+            <button type="button" data-admin-mode="overview" class="admin-mode bg-brand-950 text-white px-4 py-2 rounded-lg text-sm font-bold">Overview</button>
+            <button type="button" data-admin-mode="orders" class="admin-mode bg-stone-100 text-stone-700 px-4 py-2 rounded-lg text-sm font-bold">Orders</button>
+            <button type="button" data-admin-mode="customers" class="admin-mode bg-stone-100 text-stone-700 px-4 py-2 rounded-lg text-sm font-bold">Customers</button>
+            <button type="button" data-admin-mode="seating" class="admin-mode bg-stone-100 text-stone-700 px-4 py-2 rounded-lg text-sm font-bold">Seating</button>
+            <button type="button" data-admin-mode="menu" class="admin-mode bg-stone-100 text-stone-700 px-4 py-2 rounded-lg text-sm font-bold">Menu</button>
+        </div>
+        <div data-admin-view="overview" class="space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-white border border-stone-200 rounded-xl p-5"><p class="text-sm text-stone-500">Customer accounts</p><p id="adminCustomerCount" class="text-2xl font-black text-stone-900">0</p></div>
+                <div class="bg-white border border-stone-200 rounded-xl p-5"><p class="text-sm text-stone-500">Pre-orders</p><p id="adminOrderCount" class="text-2xl font-black text-stone-900">0</p></div>
+            </div>
+            <p class="text-sm text-stone-500">Use the administrator modes to manage orders, customers, seating, and menu availability.</p>
+        </div>
+        <div data-admin-view="orders" class="hidden bg-white border border-stone-200 rounded-xl p-5">
+            <h3 class="font-bold text-stone-900 mb-3">Order management</h3>
+            <div id="adminOrderList" class="divide-y divide-stone-100 text-sm"></div>
+        </div>
+        <div data-admin-view="customers" class="hidden bg-white border border-stone-200 rounded-xl p-5">
+            <h3 class="font-bold text-stone-900 mb-3">Customer directory</h3>
+            <div id="adminCustomerList" class="divide-y divide-stone-100 text-sm"></div>
+        </div>
+        <form id="adminSeatingForm" data-admin-view="seating" class="hidden bg-white border border-stone-200 rounded-xl p-5 space-y-4">
+            <h3 class="font-bold text-stone-900">Branch seating availability</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <label class="text-sm font-semibold text-stone-700">Open study tables<input id="adminOpenTables" type="number" min="0" max="50" required class="mt-1 w-full p-3 border border-stone-300 rounded-lg"></label>
+                <label class="text-sm font-semibold text-stone-700">Available power sockets<input id="adminOpenSockets" type="number" min="0" max="50" required class="mt-1 w-full p-3 border border-stone-300 rounded-lg"></label>
+            </div>
+            <button type="submit" class="bg-brand-950 hover:bg-brand-600 text-white font-bold px-4 py-2.5 rounded-lg text-sm">Save seating status</button>
+            <p id="adminSeatingMessage" class="hidden text-sm text-emerald-700" role="status"></p>
+        </form>
+        <div data-admin-view="menu" class="hidden bg-white border border-stone-200 rounded-xl p-5">
+            <h3 class="font-bold text-stone-900 mb-3">Menu availability</h3>
+            <div id="adminMenuList" class="divide-y divide-stone-100 text-sm"></div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH AUTHOR & ACADEMIC CREDITS -->
+    <footer id="siteFooter" class="hidden bg-brand-950 text-stone-400 py-8 text-center text-xs space-y-2 border-t border-brand-900">
+        <p class="font-bold text-stone-200">IT105 Web Development | Group Project</p>
+        <p>Created & Developed by: <span class="text-accent-400 font-semibold">Michael Roch T. Arcipe</span> & <span class="text-accent-400 font-semibold">Jade Ganzan</span></p>
+        <p>Target Location: Pick Up Coffee Ecoland Branch (Near St. John Paul II Parish), Davao City</p>
+        <p class="text-stone-500 text-[10px] pt-2">&copy; 2026 Pick Up Coffee Express & Seat Reserve. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        // JS Feature 1: Live Menu Filter Search
+        function filterMenu() {
+            let input = document.getElementById('menuSearch').value.toLowerCase();
+            document.querySelectorAll('.menu-card').forEach(card => {
+                let name = card.getAttribute('data-name');
+                card.style.display = name.includes(input) ? "flex" : "none";
+            });
+        }
+
+        const ADMIN_ACCOUNT = { name: 'Pick Up Coffee Administrator', email: 'admin@greencoffee.local', password: 'Admin123!', role: 'admin' };
+        const USERS_KEY = 'greenCoffeeUsers';
+        const ORDERS_KEY = 'greenCoffeeOrders';
+        const SEATING_KEY = 'greenCoffeeSeating';
+        const MENU_KEY = 'greenCoffeeMenuAvailability';
+        let currentUser = null;
+
+        function getStoredList(key) {
+            try {
+                const value = JSON.parse(localStorage.getItem(key) || '[]');
+                return Array.isArray(value) ? value : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function showAuthMessage(message, isError = true) {
+            const element = document.getElementById('authMessage');
+            element.textContent = message;
+            element.className = `text-sm p-3 rounded-lg ${isError ? 'bg-red-50 text-red-800 border border-red-200' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'}`;
+        }
+
+        document.querySelectorAll('.auth-tab').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.auth-tab').forEach(tab => tab.className = 'auth-tab bg-stone-100 text-stone-700 px-2 py-2.5 rounded-lg text-xs sm:text-sm font-bold');
+                button.className = 'auth-tab bg-brand-950 text-white px-2 py-2.5 rounded-lg text-xs sm:text-sm font-bold';
+                document.querySelectorAll('.auth-form').forEach(form => form.classList.add('hidden'));
+                document.getElementById(button.dataset.authView === 'register' ? 'customerRegisterForm' : button.dataset.authView === 'admin-login' ? 'adminLoginForm' : 'customerLoginForm').classList.remove('hidden');
+                document.getElementById('authMessage').classList.add('hidden');
+            });
+        });
+
+        document.querySelectorAll('.admin-mode').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentUser?.role !== 'admin') return;
+                document.querySelectorAll('.admin-mode').forEach(tab => tab.className = 'admin-mode bg-stone-100 text-stone-700 px-4 py-2 rounded-lg text-sm font-bold');
+                button.className = 'admin-mode bg-brand-950 text-white px-4 py-2 rounded-lg text-sm font-bold';
+                document.querySelectorAll('[data-admin-view]').forEach(view => view.classList.toggle('hidden', view.dataset.adminView !== button.dataset.adminMode));
+            });
+        });
+
+        function setSignedInUser(user) {
+            currentUser = user;
+            document.getElementById('queueStatus').classList.add('hidden');
+            document.getElementById('customerOrderView').classList.add('hidden');
+            ['siteNav', 'hero', 'about', 'siteFooter'].forEach(id => document.getElementById(id).classList.remove('hidden'));
+            document.getElementById('authPanel').classList.add('hidden');
+            document.getElementById('signedInPanel').classList.remove('hidden');
+            document.getElementById('signedInRole').textContent = user.role === 'admin' ? 'Administrator access' : 'Customer account';
+            document.getElementById('signedInName').textContent = user.name;
+            document.getElementById('signedInEmail').textContent = user.email;
+            document.getElementById('accessNavLink').textContent = 'Account';
+            document.getElementById('dashboard').classList.remove('hidden');
+            document.getElementById('contact').classList.remove('hidden');
+            document.getElementById('adminPanel').classList.toggle('hidden', user.role !== 'admin');
+            applyMenuAvailability();
+            if (user.role === 'admin') {
+                document.querySelector('[data-admin-mode="overview"]').click();
+                loadAdminSettings();
+                renderAdminOverview();
+            }
+        }
+
+        document.getElementById('customerRegisterForm').addEventListener('submit', async event => {
+            event.preventDefault();
+            const name = document.getElementById('registerName').value.trim();
+            const email = document.getElementById('registerEmail').value.trim().toLowerCase();
+            const phone = document.getElementById('registerPhone').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            if (password !== document.getElementById('registerPasswordConfirm').value) {
+                showAuthMessage('Passwords do not match.');
+                return;
+            }
+            const users = getStoredList(USERS_KEY);
+            if (email === ADMIN_ACCOUNT.email || users.some(user => user.email === email)) {
+                showAuthMessage('An account already uses that email address.');
+                return;
+            }
+            try {
+                const salt = crypto.getRandomValues(new Uint8Array(16));
+                const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
+                const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' }, key, 256);
+                const account = { name, email, phone, salt: Array.from(salt), passwordHash: Array.from(new Uint8Array(bits)), role: 'customer' };
+                users.push(account);
+                localStorage.setItem(USERS_KEY, JSON.stringify(users));
+                setSignedInUser(account);
+            } catch {
+                showAuthMessage('Account creation is unavailable in this browser. Open the page in a modern browser and try again.');
+            }
+        });
+
+        async function verifyCustomerPassword(user, password) {
+            const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveBits']);
+            const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', salt: new Uint8Array(user.salt), iterations: 100000, hash: 'SHA-256' }, key, 256);
+            const actual = new Uint8Array(bits);
+            return actual.length === user.passwordHash.length && actual.every((value, index) => value === user.passwordHash[index]);
+        }
+
+        document.getElementById('customerLoginForm').addEventListener('submit', async event => {
+            event.preventDefault();
+            const email = document.getElementById('customerLoginEmail').value.trim().toLowerCase();
+            const password = document.getElementById('customerLoginPassword').value;
+            const user = getStoredList(USERS_KEY).find(account => account.email === email && account.role === 'customer');
+            try {
+                if (!user || !(await verifyCustomerPassword(user, password))) throw new Error('invalid credentials');
+                setSignedInUser(user);
+            } catch {
+                showAuthMessage('Customer sign-in failed. Check your email and password, or create a customer account.');
+            }
+        });
+
+        document.getElementById('adminLoginForm').addEventListener('submit', event => {
+            event.preventDefault();
+            const email = document.getElementById('adminLoginEmail').value.trim().toLowerCase();
+            const password = document.getElementById('adminLoginPassword').value;
+            if (email !== ADMIN_ACCOUNT.email || password !== ADMIN_ACCOUNT.password) {
+                showAuthMessage('Administrator sign-in failed. Check the demo credentials.');
+                return;
+            }
+            setSignedInUser(ADMIN_ACCOUNT);
+        });
+
+        document.getElementById('signOutButton').addEventListener('click', () => {
+            currentUser = null;
+            cart = [];
+            updateCartDisplay();
+            ['siteNav', 'hero', 'about', 'siteFooter'].forEach(id => document.getElementById(id).classList.add('hidden'));
+            document.getElementById('authPanel').classList.remove('hidden');
+            document.getElementById('signedInPanel').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('contact').classList.add('hidden');
+            document.getElementById('adminPanel').classList.add('hidden');
+            document.getElementById('accessNavLink').textContent = 'Sign In';
+            document.getElementById('customerLoginForm').reset();
+            document.getElementById('adminLoginForm').reset();
+            document.getElementById('access').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function renderAdminOverview() {
+            if (currentUser?.role !== 'admin') return;
+            const users = getStoredList(USERS_KEY);
+            const orders = getStoredList(ORDERS_KEY);
+            document.getElementById('adminCustomerCount').textContent = users.length;
+            document.getElementById('adminOrderCount').textContent = orders.length;
+            document.getElementById('adminCustomerList').innerHTML = users.length ? users.map(user => `<div class="py-2"><p class="font-semibold text-stone-800">${escapeHtml(user.name)}</p><p class="text-stone-500">${escapeHtml(user.email)} · ${escapeHtml(user.phone)}</p></div>`).join('') : '<p class="text-stone-500">No customer accounts yet.</p>';
+            document.getElementById('adminOrderList').innerHTML = orders.length ? orders.slice().reverse().map((order, index) => `<div class="py-3"><p class="font-semibold text-stone-800">${escapeHtml(order.ticket || `Order ${orders.length - index}`)} · ${escapeHtml(order.customerName)} · ₱${escapeHtml(order.total)}</p><p class="text-stone-500">${escapeHtml(order.customerEmail)} · ${escapeHtml(order.timeSlot)}</p><p class="text-stone-500">${escapeHtml((order.items || []).join(', '))}</p><label class="mt-2 inline-flex items-center gap-2 text-xs font-semibold text-stone-600">Status<select data-order-index="${orders.length - index - 1}" class="admin-order-status border border-stone-300 rounded-md p-1.5"><option${(order.status || 'Received') === 'Received' ? ' selected' : ''}>Received</option><option${order.status === 'Preparing' ? ' selected' : ''}>Preparing</option><option${order.status === 'Ready' ? ' selected' : ''}>Ready</option><option${order.status === 'Completed' ? ' selected' : ''}>Completed</option></select></label></div>`).join('') : '<p class="text-stone-500">No pre-orders yet.</p>';
+            const menuAvailability = getMenuAvailability();
+            document.getElementById('adminMenuList').innerHTML = Array.from(document.querySelectorAll('.menu-card')).map((card, index) => {
+                const name = card.querySelector('h3').textContent;
+                const available = menuAvailability[index] !== false;
+                return `<div class="flex justify-between items-center gap-4 py-3"><span class="font-semibold text-stone-800">${escapeHtml(name)}</span><button type="button" data-menu-index="${index}" class="admin-menu-toggle border border-stone-300 rounded-lg px-3 py-1.5 font-bold ${available ? 'text-emerald-700' : 'text-red-700'}">${available ? 'Available' : 'Unavailable'}</button></div>`;
+            }).join('');
+            applyMenuAvailability();
+        }
+
+        function getMenuAvailability() {
+            try {
+                const value = JSON.parse(localStorage.getItem(MENU_KEY) || '[]');
+                return Array.isArray(value) ? value : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function applyMenuAvailability() {
+            const availability = getMenuAvailability();
+            document.querySelectorAll('.menu-card').forEach((card, index) => {
+                const button = card.querySelector('button');
+                const available = availability[index] !== false;
+                button.disabled = !available;
+                button.classList.toggle('opacity-50', !available);
+                button.textContent = available ? 'Add to Order' : 'Currently Unavailable';
+            });
+        }
+
+        function loadAdminSettings() {
+            let seating;
+            try {
+                seating = JSON.parse(localStorage.getItem(SEATING_KEY) || '{"tables":4,"sockets":2}');
+            } catch {
+                seating = { tables: 4, sockets: 2 };
+            }
+            document.getElementById('adminOpenTables').value = seating.tables;
+            document.getElementById('adminOpenSockets').value = seating.sockets;
+            document.getElementById('openTablesStatus').textContent = `${seating.tables} Open`;
+            document.getElementById('openSocketsStatus').textContent = `${seating.sockets} Available`;
+        }
+
+        document.getElementById('adminSeatingForm').addEventListener('submit', event => {
+            event.preventDefault();
+            if (currentUser?.role !== 'admin') return;
+            const seating = {
+                tables: Number(document.getElementById('adminOpenTables').value),
+                sockets: Number(document.getElementById('adminOpenSockets').value)
+            };
+            localStorage.setItem(SEATING_KEY, JSON.stringify(seating));
+            loadAdminSettings();
+            const message = document.getElementById('adminSeatingMessage');
+            message.textContent = 'Seating availability saved.';
+            message.classList.remove('hidden');
+        });
+
+        document.getElementById('adminOrderList').addEventListener('change', event => {
+            if (currentUser?.role !== 'admin' || !event.target.matches('.admin-order-status')) return;
+            const orders = getStoredList(ORDERS_KEY);
+            const order = orders[Number(event.target.dataset.orderIndex)];
+            if (!order) return;
+            order.status = event.target.value;
+            localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+        });
+
+        document.getElementById('adminMenuList').addEventListener('click', event => {
+            if (currentUser?.role !== 'admin') return;
+            const button = event.target.closest('.admin-menu-toggle');
+            if (!button) return;
+            const availability = getMenuAvailability();
+            const index = Number(button.dataset.menuIndex);
+            availability[index] = availability[index] === false;
+            localStorage.setItem(MENU_KEY, JSON.stringify(availability));
+            renderAdminOverview();
+        });
+
+        function escapeHtml(value) {
+            return String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+        }
+
+        // JS Feature 2: Interactive Order Cart & Queue Ticket Generator
+        let cart = [];
+
+        function addToOrder(name, price) { 
+            if (!currentUser) return;
+            cart.push({ name, price }); 
+            updateCartDisplay(); 
+        }
+
+        function updateCartDisplay() {
+            let list = document.getElementById('orderList');
+            let badge = document.getElementById('itemCountBadge');
+            let totalEl = document.getElementById('orderTotal');
+            
+            badge.innerText = cart.length + (cart.length === 1 ? ' item' : ' items');
+            
+            if (cart.length === 0) { 
+                list.innerHTML = `<li class="text-stone-400 italic text-center py-6">Your cart is empty</li>`; 
+                totalEl.innerText = '₱0'; 
+                return; 
+            }
+
+            let html = '', total = 0;
+            cart.forEach((item, index) => { 
+                total += item.price; 
+                html += `<li class="flex justify-between items-center py-2">
+                    <span class="font-medium text-stone-800">${item.name}</span>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold text-brand-700">₱${item.price}</span>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 text-xs px-1"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </li>`; 
+            });
+            list.innerHTML = html; 
+            totalEl.innerText = '₱' + total;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function submitPreOrder() {
+            if (!currentUser) {
+                alert('Please sign in before placing an order.');
+                return;
+            }
+            if (cart.length === 0) {
+                alert('Please select at least one menu item to pre-order!');
+                return;
+            }
+            let timeSlot = document.getElementById('pickupTime').value;
+            let ticketNo = Math.floor(100 + Math.random() * 900);
+            const confirmedItems = cart.map(item => ({ name: item.name, price: item.price }));
+            const orders = getStoredList(ORDERS_KEY);
+            orders.push({ ticket: `GC-${ticketNo}`, customerName: currentUser.name, customerEmail: currentUser.email, items: cart.map(item => item.name), total: cart.reduce((sum, item) => sum + item.price, 0), timeSlot, createdAt: new Date().toISOString() });
+            localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+            
+            document.getElementById('queueTicket').innerHTML = `Ticket <strong>#GC-${ticketNo}</strong> assigned.<br>Pickup Slot: <strong>${timeSlot}</strong> at Express Counter.`;
+            document.getElementById('queueStatus').classList.remove('hidden');
+            const customerOrderView = document.getElementById('customerOrderView');
+            customerOrderView.classList.toggle('hidden', currentUser.role !== 'customer');
+            if (currentUser.role === 'customer') {
+                document.getElementById('confirmedOrderList').innerHTML = confirmedItems.map(item => `<li class="flex justify-between gap-4"><span>${escapeHtml(item.name)}</span><span class="font-semibold">₱${item.price}</span></li>`).join('');
+                document.getElementById('confirmedOrderTotal').textContent = `₱${confirmedItems.reduce((sum, item) => sum + item.price, 0)}`;
+            }
+            if (currentUser.role === 'admin') renderAdminOverview();
+            
+            cart = []; 
+            updateCartDisplay();
+        }
+
+        // Form Validation Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('feedbackForm').reset();
+            document.getElementById('formSuccessAlert').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('formSuccessAlert').classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
